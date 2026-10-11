@@ -1,0 +1,11 @@
+from django.db import models
+
+class Event(models.Model):
+    title = models.CharField(max_length=250)
+    description = models.TextField()
+    date = models.DateTimeField()
+    capacity = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    location = models.CharField(max_length=400)
+    def __str__(self):
+        return self.title
